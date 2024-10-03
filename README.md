@@ -161,12 +161,68 @@ For the first row in the dataset:
    \]
 
 ## Code
+# Movie Analysis Project
 
--- Create database
+## Overview
+
+This project involves analyzing a dataset containing information about movies. The goal is to uncover insights regarding budgets, gross revenues, ratings, and trends across different genres and years.
+
+## Dataset
+
+The dataset used for this analysis is sourced from Kaggle: [Movies Dataset](https://www.kaggle.com/datasets/danielgrijalvas/movies). It contains various details about movies, including their budgets, revenues, genres, and ratings.
+
+## Analysis Results
+
+- **Budget vs. Gross Revenue**: Strong positive correlation—higher budgets generally lead to higher gross revenue.
+- **Genre Budget Differences**: Animation, Action, and Adventure genres have the highest average budgets, while Drama and Comedy have lower budgets.
+- **Yearly Movie Release Trends**: Recent years show an increase in the number of movies released, especially in Action, Comedy, and Drama.
+- **Top Performing Genres**: Animation leads in gross revenue, followed by Action and Adventure, likely due to their global appeal.
+- **Company/Country Influence**: Hollywood studios dominate in terms of both budget and gross revenue.
+- **Ratings and Success**: Higher-rated films tend to perform better, but outliers exist where lower-rated films still generate significant revenue.
+- **Runtime and Revenue**: Feature-length movies (120-150 mins) generally perform better at the box office.
+- **Outliers**: Notable outliers in both budget and revenue, driven by blockbuster franchises, skew the averages but highlight the impact of these films.
+
+## Database Setup
+
+To set up the database for the analysis, execute the following SQL commands:
+
+```sql
+
+Here’s a complete README.md file that includes all relevant sections, including your analysis results and database setup:
+
+markdown
+Copy code
+# Movie Analysis Project
+
+## Overview
+
+This project involves analyzing a dataset containing information about movies. The goal is to uncover insights regarding budgets, gross revenues, ratings, and trends across different genres and years.
+
+## Dataset
+
+The dataset used for this analysis is sourced from Kaggle: [Movies Dataset](https://www.kaggle.com/datasets/danielgrijalvas/movies). It contains various details about movies, including their budgets, revenues, genres, and ratings.
+
+## Analysis Results
+
+- **Budget vs. Gross Revenue**: Strong positive correlation—higher budgets generally lead to higher gross revenue.
+- **Genre Budget Differences**: Animation, Action, and Adventure genres have the highest average budgets, while Drama and Comedy have lower budgets.
+- **Yearly Movie Release Trends**: Recent years show an increase in the number of movies released, especially in Action, Comedy, and Drama.
+- **Top Performing Genres**: Animation leads in gross revenue, followed by Action and Adventure, likely due to their global appeal.
+- **Company/Country Influence**: Hollywood studios dominate in terms of both budget and gross revenue.
+- **Ratings and Success**: Higher-rated films tend to perform better, but outliers exist where lower-rated films still generate significant revenue.
+- **Runtime and Revenue**: Feature-length movies (120-150 mins) generally perform better at the box office.
+- **Outliers**: Notable outliers in both budget and revenue, driven by blockbuster franchises, skew the averages but highlight the impact of these films.
+
+## Database Setup
+
+To set up the database for the analysis, execute the following SQL commands:
+
+```sql
+-- Create database 
 CREATE DATABASE IF NOT EXISTS walmartSales;
 
--- Create table
-CREATE TABLE IF NOT EXISTS sales(
+-- Create table 
+CREATE TABLE IF NOT EXISTS sales (
     invoice_id VARCHAR(30) NOT NULL PRIMARY KEY,
     branch VARCHAR(5) NOT NULL,
     city VARCHAR(30) NOT NULL,
@@ -185,4 +241,3 @@ CREATE TABLE IF NOT EXISTS sales(
     gross_income DECIMAL(12, 4),
     rating FLOAT(2, 1)
 );
-```
